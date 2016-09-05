@@ -2,7 +2,7 @@
 Simple password generator for services purpose
 
 This password generator is made for services handling purpose.
-It aims at generating retrieving a strong and independant password for each services you use.
+It aims at generating, retrieving a strong and independant password for each service you use.
 This generator is a solution to leaks problem. 
 
 Features :
