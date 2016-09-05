@@ -13,15 +13,15 @@ Features :
 [+] Thanks to the cryptography functions used (sha256), either 
 the service and the master password cannot be retrieve from the generated one
 
-[+] The service name act as a salt in the sha256 function
+[+] The service name acts as a salt in the sha256 function
 
 [+] In order to add some entropy the final generated password is a base64 of the 
 hash obtained. 
 
 [+] To conclude, given a service name like "facebook" & a master password, you obtain :
 
-- an unbrute-forcable password 
-- even if the service database leaks, your master password and every password of 
+- an non brute-forcable password 
+- even if the service's database leaks, your master password and every password of 
 the other services remain protected
 - the program doesn't need to keep your master password to work
 
