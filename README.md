@@ -14,6 +14,7 @@ Features :
 the service and the master password cannot be retrieve from the generated one
 
 [+] The service name act as a salt in the sha256 function
+
 [+] In order to add some entropy the final generated password is a base64 of the 
 hash obtained. 
 
