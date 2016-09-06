@@ -32,5 +32,5 @@ passgen init_digest
 
  run it :
 ---------
-passgen <service_name>
+passgen \<service_name\>
 
