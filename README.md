@@ -1,36 +1,32 @@
 # passgen
-Simple password generator for services purpose
+Simple password generator for multiple authentication
 
-This password generator is made for services handling purpose.
-It aims at generating, retrieving a strong and independant password for each service you use.
-This generator is a solution to leaks problem. 
+This generator is a solution to database's leaks problem. 
 
 Features :
 ----------
 
-[+] Generate and retrieve very complex passwords from one master password and a service name
+[+] Generates and retrieves complex passwords from a master key and a service name
 
-[+] Thanks to the cryptography functions used (sha256), either 
-the service and the master password cannot be retrieve from the generated one
-
-[+] The service name acts as a salt in the sha256 function
+[+] Thanks to the cryptography functions used (sha256), both 
+the service and the master key cannot be retrieve from the generated password
 
 [+] In order to add some entropy the final generated password is a base64 of the 
-hash obtained. 
+obtained hash. 
 
-[+] To conclude, given a service name like "facebook" & a master password, you obtain :
+[+] To conclude, given a service name like "facebook" & a master key, you obtain :
 
 - an non brute-forcable password 
 - even if the service's database leaks, your master password and every password of 
-the other services remain protected
+the other services remains protected
 - the program doesn't need to keep your master password to work
 
 ############################## USAGE ############################## 
-init your master password : 
----------------------------
+init your master key : 
+----------------------
 passgen init_digest
 
-to run :
---------
-passgen <service_name>
+ run it :
+---------
+passgen \<service_name\>
 
