@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://cdn.rawgit.com/chrisveness/crypto/6073a47/sha256.js"></script>
+    <script>
+        function passgen(){
+            var service = document.getElementById('service').value;
+            var password = document.getElementById('password').value;
+            var pin = document.getElementById('pin').value;
+
+            var passHashed = Sha256.hash(password,{outFormat:'hex'});
+            var mismatchTest = passHashed.substring(0,2);
+
+            if (pin.localeCompare(mismatchTest) == 0){
+                var fullGenerated = btoa(Sha256.hash(service+password,{outFormat:'hex'}));
+                var passGenerated = fullGenerated.substring(fullGenerated.length-58, fullGenerated.length);
+            }else{
+                var passGenerated = "Wrong password !";
+            }
+            return passGenerated;
+        }
+    </script>
+</head>
+    <body>
+        <div class="jumbotron text-center">
+            <h1>Password Generator<h5>©seabass</h5></h1>
+
+              <span class="text-center"><i class="glyphicon glyphicon-cog"></i></span>
+              <input id="service" type="text" placeholder="service">
+
+              <span class="text-center"><i class="glyphicon glyphicon-lock"></i></span>
+              <input id="password" type="password" placeholder="password">
+
+              <span class="text-center"><i class="glyphicon glyphicon-ok-circle"></i></span>
+              <input id="pin" type="text" value="a5">
+    
+            </div>
+        </div>
+
+        <div class="text-center">
+            <button type="button" class="btn btn-default" onclick="document.getElementById('passGenerated').innerHTML = passgen()">Generate
+            </button>
+            <h5 type="text" id="passGenerated"/></h5>       
+        </div>
+    </body>
+</html> 
+
+
